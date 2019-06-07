@@ -1,0 +1,2 @@
+from .scanner import BarcodeScanner
+
