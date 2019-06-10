@@ -9,7 +9,13 @@ class BarcodeScanner(object):
         self.reader.start()
 
     def __del__(self):
-        self.reader.join()
+
+        try:
+            reader = getattr(self, 'reader')
+        except AttributeError:
+            pass
+        else:
+            reader.join()
 
     def scan_code(self, gui=True):
 
