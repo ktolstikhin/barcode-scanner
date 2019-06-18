@@ -18,6 +18,7 @@ class BarcodeScanner(object):
             reader.join()
 
     def scan_code(self, gui=True):
+        code = None
 
         if gui:
             form = BarcodeForm(self.reader)
